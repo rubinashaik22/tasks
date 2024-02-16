@@ -5,7 +5,13 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        return [numbers[0], numbers[0]];
+    } else {
+        return [numbers[0], numbers[numbers.length - 1]];
+    }
 }
 
 /**
@@ -13,7 +19,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const tripled = numbers.map((price: number): number => price * 3);
+    return tripled;
 }
 
 /**
@@ -21,7 +28,10 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const integers = numbers.map((num: string): number =>
+        !isNaN(parseInt(num)) ? parseInt(num) : 0
+    );
+    return integers;
 }
 
 /**
@@ -32,7 +42,12 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const nums = amounts.map((amount: string): number =>
+        !isNaN(parseInt(amount.replace("$", "")))
+            ? parseInt(amount.replace("$", ""))
+            : 0
+    );
+    return nums;
 };
 
 /**
@@ -41,7 +56,12 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const strings = messages
+        .map((message: string): string =>
+            message.endsWith("!") ? message.toUpperCase() + "" : message
+        )
+        .filter((message: string): boolean => !message.endsWith("?"));
+    return strings;
 };
 
 /**
@@ -49,7 +69,10 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const short_words = words.filter(
+        (message: string): boolean => message.length < 4
+    );
+    return short_words.length;
 }
 
 /**
@@ -58,7 +81,11 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    const isAllRGB = colors.every(
+        (color: string): boolean =>
+            color === "red" || color === "blue" || color === "green"
+    );
+    return isAllRGB;
 }
 
 /**
@@ -69,7 +96,19 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    let s = "";
+
+    if (addends.length === 0) {
+        s = "0=0";
+    } else {
+        let sum = 0;
+        addends.map((addend: number): number => (sum += addend));
+        s += sum + "=";
+        addends.map((addend: number): string => (s += addend.toString() + "+"));
+        s = s.slice(0, -1);
+    }
+
+    return s;
 }
 
 /**
@@ -82,5 +121,27 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let sum = 0;
+    let done = false;
+
+    const new_values = values.map((value: number): number => {
+        if (!done) {
+            if (value < 0) {
+                done = true;
+            } else {
+                sum += value;
+            }
+        }
+        return value;
+    });
+
+    if (!done) {
+        new_values.push(sum);
+    } else {
+        const insertIndex = new_values.findIndex(
+            (value: number): boolean => value < 0
+        );
+        new_values.splice(insertIndex + 1, 0, sum);
+    }
+    return new_values;
 }
