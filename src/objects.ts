@@ -83,12 +83,11 @@ export function toMarkdown(question: Question): string {
 
     if (question.type == "multiple_choice_question") {
         s += "\n";
-        for (let i = 0; i < question.options.length; i++) {
-            s += "- " + question.options[i];
-            if (i != question.options.length - 1) {
-                s += "\n";
-            }
-        }
+
+        question.options.map(
+            (option: string): string => (s += "- " + option + "\n")
+        );
+        s = s.slice(0, -1);
     }
 
     return s;
