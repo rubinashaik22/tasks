@@ -99,14 +99,8 @@ export function toMarkdown(question: Question): string {
  */
 export function renameQuestion(question: Question, newName: string): Question {
     return {
-        id: question.id,
-        name: newName,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: question.options,
-        points: question.points,
-        published: question.published
+        ...question,
+        name: newName
     };
 }
 
@@ -116,18 +110,10 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    const newQuestion = {
-        id: question.id,
-        name: question.name,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: question.options,
-        points: question.points,
-        published: question.published
+    return {
+        ...question,
+        published: !question.published
     };
-    newQuestion.published = !question.published;
-    return newQuestion;
 }
 
 /**
@@ -156,14 +142,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  */
 export function addOption(question: Question, newOption: string): Question {
     const newQuestion = {
-        id: question.id,
-        name: question.name,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: [...question.options],
-        points: question.points,
-        published: question.published
+        ...question,
+        options: [...question.options]
     };
 
     newQuestion.options.push(newOption);
