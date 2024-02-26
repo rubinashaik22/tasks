@@ -127,7 +127,6 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
         ...oldQuestion,
         id: id,
         name: "Copy of " + oldQuestion.name,
-        options: [...oldQuestion.options],
         published: false
     };
     return newQuestion;
