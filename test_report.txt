@@ -16,8 +16,8 @@ PASS src/arrays.test.ts
 PASS src/nested.test.ts
 PASS src/functions.test.ts
 PASS src/text.test.tsx
-PASS src/HtmlCss.test.tsx
 PASS src/App.test.tsx
+PASS src/HtmlCss.test.tsx
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
@@ -36,5 +36,5 @@ All files       |     100 |    98.27 |     100 |     100 |
 Test Suites: 7 passed, 7 total
 Tests:       49 passed, 49 total
 Snapshots:   0 total
-Time:        4.046 s
+Time:        3.974 s
 Ran all test suites.
