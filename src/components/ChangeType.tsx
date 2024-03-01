@@ -3,14 +3,13 @@ import { Button } from "react-bootstrap";
 import { QuestionType } from "../interfaces/question";
 
 export function ChangeType(): JSX.Element {
-    // eslint-disable-next-line prefer-const
-    let [type, setType] = useState<QuestionType>("short_answer_question");
+    const [type, setType] = useState<QuestionType>("short_answer_question");
 
     function change(): void {
         setType(
             type === "short_answer_question"
-                ? (type = "multiple_choice_question")
-                : (type = "short_answer_question")
+                ? "multiple_choice_question"
+                : "short_answer_question"
         );
     }
 
