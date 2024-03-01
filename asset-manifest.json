@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tasks/static/css/main.d3c736c5.css",
-    "main.js": "/tasks/static/js/main.0a1cf6ff.js",
+    "main.js": "/tasks/static/js/main.c3bd39e5.js",
     "static/js/787.4ef7427d.chunk.js": "/tasks/static/js/787.4ef7427d.chunk.js",
     "static/media/ButterflyFamilyTree.jpg": "/tasks/static/media/ButterflyFamilyTree.80028228ea9da0ce98d7.jpg",
     "static/media/monarch-butterfly-grass_3x2.avif": "/tasks/static/media/monarch-butterfly-grass_3x2.2816a1dece8ac6bda1b8.avif",
     "index.html": "/tasks/index.html",
     "main.d3c736c5.css.map": "/tasks/static/css/main.d3c736c5.css.map",
-    "main.0a1cf6ff.js.map": "/tasks/static/js/main.0a1cf6ff.js.map",
+    "main.c3bd39e5.js.map": "/tasks/static/js/main.c3bd39e5.js.map",
     "787.4ef7427d.chunk.js.map": "/tasks/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d3c736c5.css",
-    "static/js/main.0a1cf6ff.js"
+    "static/js/main.c3bd39e5.js"
   ]
 }
