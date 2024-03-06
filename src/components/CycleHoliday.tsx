@@ -1,10 +1,8 @@
-/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function CycleHoliday(): JSX.Element {
-    // eslint-disable-next-line prefer-const
-    let [holiday, setHoliday] = useState<string>("Halloween");
+    const [holiday, setHoliday] = useState<string>("Halloween");
     return (
         <div>
             <Button

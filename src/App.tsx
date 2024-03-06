@@ -6,6 +6,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
 import "./ButterflyFamilyTree.jpg";
 import "./monarch-butterfly-grass_3x2.avif";
 import { Button } from "react-bootstrap";
@@ -17,6 +21,14 @@ function App(): JSX.Element {
             <header className="App-header">
                 RUBINA SHAIK: UD CISC275 with React Hooks and TypeScript
             </header>
+            <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr></hr>
+            <ChooseTeam></ChooseTeam>
+            <hr></hr>
+            <ColoredBox></ColoredBox>
+            <hr></hr>
+            <ShoveBox></ShoveBox>
             <h1 style={{ backgroundColor: "#FFB6C1" }}>Rubina&apos;s App</h1>
             <img
                 src={require("./ButterflyFamilyTree.jpg")}

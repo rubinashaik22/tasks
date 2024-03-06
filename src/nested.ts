@@ -216,7 +216,11 @@ export function changeQuestionTypeById(
 ): Question[] {
     return questions.map((question: Question): Question => {
         if (question.id == targetId) {
-            const q = { ...question, type: newQuestionType };
+            const q = {
+                ...question,
+                options: [...question.options],
+                type: newQuestionType
+            };
             if (q.type == "short_answer_question") {
                 q.options = [];
             }
@@ -277,7 +281,9 @@ export function duplicateQuestionInArray(
     const index = questions.findIndex(
         (question: Question): boolean => targetId == question.id
     );
-    const duplicatedQuestions = [...questions];
+    const duplicatedQuestions = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
     if (ques) {
         const duplicatedQuestion = duplicateQuestion(newId, ques);
         duplicatedQuestions.splice(index + 1, 0, duplicatedQuestion);
